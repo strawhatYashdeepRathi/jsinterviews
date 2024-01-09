@@ -101,4 +101,32 @@ privateCounter._add(5)
 privateCounter._add(25)
 console.log(privateCounter.ret())
 
+// Q Rewrite the function in such a way the output gets printed once even though the function is called multiple times.
+
+// let view
+// function likeTheVideo(){
+//     view="Roadside Coder"
+//     console.log( "Subscribe to", view)
+// }
+
+let view;
+function likeTheVideoini(){
+  let c = 0;
+  return function(){
+    if(c>0){
+      console.log('already called')
+    }else {
+      view="Roadside Coder"
+      console.log( "Subscribe to", view)
+      c++
+    }
+  }
+}
+
+let likeTheVideo = likeTheVideoini()
+likeTheVideo(); // Subscribe to Roadside Coder
+likeTheVideo(); // Subscribe to Roadside Coder
+likeTheVideo(); // Subscribe to Roadside Coder
+likeTheVideo(); // Subscribe to Roadside Coder
+
 
