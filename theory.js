@@ -79,5 +79,54 @@
 
 */
 
+/*
+  >>> shadowing effect in let and const like - 
+    lett x = 10;
+    (function(){
+        let x = 22;
+        console.log(x)     >>>> output is 22 but in case of using var we get ref error (already declared)
+    })()
+
+
+    >>> shalow copy vs deep copy
+      shalow copy is when we copy a object there is still some ref to the riginal object
+      shalow copy eg -    using spread and Object.assign({}, arrName) -> if we change the values of nested objects the original will change 
+*/
+
+const x = {
+  name: "yash",
+  bio: {
+      age: 25
+  },
+}
+
+const copyx = {...x}
+copyx.name = "gaurav"
+copyx.bio.age = 20
+console.log(x, copyx)    // >>>>>> we will see {name: "yash", bio: {age: 20}} {{name: "gaurav", bio: {age: 20}}}
+
+//  >>> deep copy is where not a trace of ref t original copy is present like - JSON.parse(JSON.stringify(obj))
+
+const new_x = {
+  name: "yash",
+  bio: {
+      age: 25
+  },
+}
+
+const new_opy_x = JSON.parse(JSON.stringify(new_x))
+new_opy_x.name = "gaurav"
+new_opy_x.bio.age = 20
+console.log(new_x, new_opy_x)   // >>    { name: 'yash', bio: { age: 25 } } { name: 'gaurav', bio: { age: 20 } }
+
+
+
+// *******        THIS KEYWORD         ***********
+
+// this keyword is a ref to something or some context 
+// be def this points to global/ window object
+// in case of arrow function this always points to context of parent function i.e. if wrapped in regular function this will point to normal functions
+// context
+
 
 
