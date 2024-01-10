@@ -130,3 +130,15 @@ likeTheVideo(); // Subscribe to Roadside Coder
 likeTheVideo(); // Subscribe to Roadside Coder
 
 
+// function hoisting 
+// with hoiting function we move whole function to top and this does not get just initialised as undefined like variables
+
+var hvar = 21
+var hfn = function() {
+  console.log('check the value here', hvar)   // >>> this will give undefined as whole function got hoisted and
+  var hvar = 20                               // this hvar here gets hoisted again in local scope so when consoling it checked that we have x already in local
+}                                             // scope so it doesn't move to parent to check for value of x and gives undefined
+hfn();
+
+
+
