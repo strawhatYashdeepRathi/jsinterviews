@@ -10,7 +10,7 @@ let count = 0;
   console.log(count); // Output?    >>>> 0
 })();
 
-// Wriet a finction to make this happen --->
+// Wriet a function to make this happen --->
 
 // ---- ans
 function createBase(n1) {

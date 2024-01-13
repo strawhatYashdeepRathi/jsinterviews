@@ -4,7 +4,7 @@
     stored directly in a memory)                                     stored a reference)
 
     >> Number, String, Boolean, Symbol,                      >> objects
-      Undefined, Null
+      Undefined, Null, BigInt
 
     >> JS is Syncronour in Nature > everything runs line by line
 
@@ -36,10 +36,10 @@
 
     >>> temporal deadzone -->   time bw declaration and initialization 
 
-    hoisting -->>   moving vars anf functions at top of the code, var only gets initialized whereas fn moves fully
+    hoisting -->>   moving vars and functions at top of the code, var only gets initialized whereas fn moves fully
 
     >>> undefined == null  > this gives true
-    >>> ubdefined === null > gives false (cuz undefined !== {})
+    >>> undefined === null > gives false (cuz undefined !== {})
 
     >>> Higher Order Functions  -->   a function that takes one or more function as argument or returns function 
  */
@@ -83,10 +83,10 @@
 
 /*
   >>> shadowing effect in let and const like - 
-    lett x = 10;
+    let x = 10;
     (function(){
         let x = 22;
-        console.log(x)     >>>> output is 22 but in case of using var we get ref error (already declared)
+        console.log(x)     >>>> output is 22 
     })()
 
 
@@ -126,9 +126,59 @@ console.log(new_x, new_opy_x)   // >>    { name: 'yash', bio: { age: 25 } } { na
 // *******        THIS KEYWORD         ***********
 
 // this keyword is a ref to something or some context 
-// be def this points to global/ window object
+// by def this points to global/ window object
 // in case of arrow function this always points to context of parent function i.e. if wrapped in regular function this will point to normal functions
 // context
+
+
+// Event Execution 
+
+/*
+  how does event execution works for ex lets take a codde example here
+*/
+
+var ev = 29;
+function fn29 (){
+  console.log(ev);
+}
+var evr = fn29()
+
+/*
+  In above code what will happen >>>
+            first an execution context will get created >> in that we will have two sides memory component and code component
+            >> 2 phases >> memory creation phase   >> where memory will be allocated to all on a first run 
+            1. like in our code >> ev: (stored in memory as undefined), fn29: this whole code will be stored in memory as this is how fn works
+                when execution start, evr: (as undefined as it justa  variable)
+            >> 2nd phase is code execution phase, again js runs through code and assign values
+            2. like now 29 will be assigned to ev in code excution phase, now nothing to be done in fn29, moves to evr where a fn is executed
+                when function gets invoked new ex context gets created 
+            >> again same thing happens
+            3.  Nothing to do in memory allocaion phase 
+            4.  iterate and see conole it works and consoles the value during code execution phase
+
+        >> Now we have stack too > Call Stack
+        when code runs first an Global execution gets created and  when a fn is invoked a new execution gets created 
+        it gets moved inside the call stack and keep poping off when task gets completed
+
+*/
+
+//*** Event Loop ***
+
+/*
+  first when the code runs in call stack the initial syncronous code runs 
+  but what with asynchronous code as we all  know js is non blocking 
+  >> like setTimeout 
+      the js do not have any timer to track the time so timer is provided by browser and holds a callback with it
+      once the timer gets expired > thr browser oves it to callback queue
+  >>  Callback queue have all callbacks queued in it and event loop is like a gatekeeper for that queue
+      as soon as the callstack gets empty event loop push the callback to callstack
+  >>  Now if we have something like promise and a callback waiting together what will get moved first
+      There is another queue called Micro Task queue/ Priority queue which queues the high priority tasks like promises
+      once call stack if empty the priority task quesue have more priority than basic callback queue
+*/
+
+
+
 
 
 
