@@ -6,7 +6,9 @@
     >> Number, String, Boolean, Symbol,                      >> objects
       Undefined, Null
 
+    >> JS is Syncronour in Nature > everything runs line by line
 
+    >when released JS was calledMocha > liveScript > JS
 
   >>> Type of declarations - var, let and const
                     hoisted                 |    scope   |   redeclared   |   reinitialized
@@ -42,7 +44,7 @@
     >>> Higher Order Functions  -->   a function that takes one or more function as argument or returns function 
  */
 
-// Some gigher order functions are :-
+// Some higher order functions are :-
 // 1. map    2. filter   3. Reduce   4. forEach   5. for in 
 /*
     >>  difference in map and forEach
