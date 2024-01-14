@@ -11,7 +11,7 @@ function movie () {
 }
 movie.call(ob1)
 
-//how call orks with arguments
+//how call works with arguments
 
 function movie2 (numb, who) {
   console.log(`where is the deadman     I'm here ~ ${this.deadman}`)
@@ -124,6 +124,19 @@ let mini = Math.min.apply(null, z1)
 
 // >>> polyfill for call methiod
 
+/*
+    1. a call method accept 2 things first is context and arguments
+    2. create a prototype function accepting arguments context by def to {} and arguments
+    3. check if function is called by function or not i.r typeof this !== functin throw error
+    4. add function in the context context.fn = this
+    5. call context.fn(...args)
+
+
+    *** for apply also its same just add another check after function type test
+      >>> first thing change parameters to not spread over just say args
+      >>> if (!Array.irarray(args)) return error else all same 
+*/
+
 
 
 const ob_x = {a: "Jam", b: "sam"}
@@ -160,6 +173,10 @@ Function.prototype.customApply = function (cxt = {}, args = []){
 pearson.customApply(ob_x, ["jenna", "sam"])
 
 // for bind
+
+
+// this is also same as call method we have 
+// key diff is it returns a function and that function can either accept arguments with itself or can accept later on the time of function call
 
 Function.prototype.custombind = function(cntxt = {}, ...args){
   if (typeof this !== "function"){
