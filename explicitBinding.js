@@ -184,7 +184,7 @@ Function.prototype.custombind = function(cntxt = {}, ...args){
   }
   cntxt.fn = this
   return function(...newArgs){
-    cntxt.fn(...newArgs)
+    cntxt.fn(...newArgs, ...args)
   }
 
 }
