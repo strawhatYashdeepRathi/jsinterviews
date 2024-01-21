@@ -1,21 +1,21 @@
 /*
   >>> Data Types
   Primitive (Immutable, fix memory size,                   Non Primitive (Mutable, no fix size,
-    stored directly in a memory)                                     stored a reference)
+    stored directly in a memory)                                     stores a reference)
 
     >> Number, String, Boolean, Symbol,                      >> objects
       Undefined, Null, BigInt
 
-    >> JS is Syncronour in Nature > everything runs line by line
+    >> JS is Syncronous in Nature > everything runs line by line
 
-    >when released JS was calledMocha > liveScript > JS
+    > when released JS was called Mocha > liveScript > JS
 
   >>> Type of declarations - var, let and const
                     hoisted                 |    scope   |   redeclared   |   reinitialized
         ----------------------------------------------------------------------------------
         var   -     yes                     |    global  |    yes         |    yes
-        let   -     yes (in temp deadzone)  |    block   |    no          |    no
-        const -     yes (in temp deadzone)  |    bloack  |    no          |    no
+        let   -     yes (in temp deadzone)  |    block   |    no          |    yes
+        const -     yes (in temp deadzone)  |    block   |    no          |    no
 
 */
 // >>>  Function Types 
@@ -58,7 +58,7 @@
     
   >> First Class Function   --> a fn that can be passed as argument or assigned to another variable or fn
 
-  >> IFFE   --> Immediatelt Invoked Fn Expression >>   (fn(){// do something})()
+  >> IIFE   --> Immediatelt Invoked Fn Expression >>   (fn(){// do something})()
 
 
 
@@ -116,7 +116,8 @@ const new_x = {
   },
 }
 
-const new_opy_x = JSON.parse(JSON.stringify(new_x))
+const new_opy_x = JSON.parse(JSON.stringify(new_x))     // this method is cool but have limitations like - slow performance, once converted date
+                                                        // to a string the JSON.parse cant convert date abck to date format, so we have - structuredClone()
 new_opy_x.name = "gaurav"
 new_opy_x.bio.age = 20
 console.log(new_x, new_opy_x)   // >>    { name: 'yash', bio: { age: 25 } } { name: 'gaurav', bio: { age: 20 } }

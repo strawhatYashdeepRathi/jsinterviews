@@ -22,7 +22,7 @@ const msg = fn1("dudoom", function cbck(msg){
 })
 console.log("end")
 
-// now suppose we have 5 sunctions like this which we need to execute one after another file f1 > f2> f3> f4> f5
+// now suppose we have 5 functions like this which we need to execute one after another file f1 > f2> f3> f4> f5
 /*
   so what we be doing here is having 5 fns with setTimeout and we will call all with callbacks >>> 
   const msg = fn1(x1, fn cb1(y1){

@@ -1,5 +1,5 @@
 // currying ?
-// a fn that takes 1 arg at a time abd returns a fn expecting another arg
+// a fn that takes 1 arg at a time and returns a fn expecting another arg
 
 
 function curr(a){
