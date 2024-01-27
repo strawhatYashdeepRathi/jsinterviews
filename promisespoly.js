@@ -17,9 +17,9 @@ function PromisePolyFill (executor) {
   let error;
 
   function resolve (val){
-    isFulfilled = true;
+    isFulfilled = true;                              // enhanced --> put a check if !isFull, !isRejected
     value = val
-    if (typeof onResolve === 'function'){
+    if (typeof onResolve === 'function'){            // enhanced version --> wrap in setTimeout
       onResolve(val);
       isCalled = true;
     }

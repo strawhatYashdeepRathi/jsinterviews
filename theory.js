@@ -29,6 +29,10 @@
 // 3. arrow function 
     let arrowfn = () => { /* do soething */ } 
 
+    // 4. First Class Functions   --- when a function is assigned to another variable or passed as an argument or returned. 
+    //     A programming language is said to have first class function
+    //      when its functions get treated like other variables
+
 /**
  * 
  * Anonymous Function --> the function in fn1 is anonymous (with no name)
@@ -58,11 +62,11 @@
     
   >> First Class Function   --> a fn that can be passed as argument or assigned to another variable or fn
 
-  >> IIFE   --> Immediatelt Invoked Fn Expression >>   (fn(){// do something})()
+  >> IIFE   --> Immediatelty Invoked Fn Expression >>   (fn(){// do something})()
 
 
 
-  >>> Closure -> A function bundled with its lexical environment is called closure. basically function having acess to scope of its outer function
+  >>> Closure -> A function bundled with its lexical environment is called closure. basically function having access to scope of its outer function
         (function (x){ return (function(2){ console.log(x+y) })() })(1)
 
   >> Params vs arguments ~ params are the ones we receive in a fn and arguments are the values that gets passed to fn when calling

@@ -39,7 +39,7 @@ console.log("end")
 */
 
 
-// Promises  >>> These are just something that returns a state > fulfilled or rejected  also (fulfilled)
+// Promises  >>> These are just something that returns a state > resolved or rejected  also (fulfilled)
 //   in fancy words >>> The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value
 
 console.log("start");
