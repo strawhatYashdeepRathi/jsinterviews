@@ -95,7 +95,7 @@
 
 
     >>> shalow copy vs deep copy
-      shalow copy is when we copy a object there is still some ref to the riginal object
+      shalow copy is when we copy a object there is still some ref to the original object
       shalow copy eg -    using spread and Object.assign({}, arrName) -> if we change the values of nested objects the original will change 
 */
 

@@ -99,7 +99,7 @@ function pf3 () {
   }, 1000)
 })}
 
-Promise.all([       // >>>>>> returns an array of all promses
+Promise.all([       // >>>>>> returns an array of all promises
   pf1(),
   pf2(),
   pf3()
@@ -121,7 +121,7 @@ Promise.race([       // it returns the one that gets fullfilled first
 
 Promise.allSettled([    // Promise.all fails when any one of the promise gets rejected
   pf1(),                // allsetted doesn't > it returns an array of responses with status as resolved or rejected
-  pf2(),                // as well as the values of those which gets resolved or reson for the ones that gets rejected
+  pf2(),                // as well as the values of those which gets resolved or reason for the ones that gets rejected
   pf3()
 ]).then((res)=> {
   console.log(res)
